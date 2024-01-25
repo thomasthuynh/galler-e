@@ -1,7 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Nav } from "./components";
+import { Home } from "./pages";
+
 function App() {
   return (
     <div>
-      <h1 className="text-xl font-bold">Hello world!</h1>
+      <Nav />
     </div>
   );
 }
