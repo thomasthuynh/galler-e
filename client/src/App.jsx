@@ -6,7 +6,9 @@ import { Home } from "./pages";
 function App() {
   return (
     <div>
-      <Nav />
+      <Router>
+        <Nav />
+      </Router>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -11,9 +11,9 @@ const Nav = () => {
           </span>
         </h2>
 
-        <button className="bg-primary rounded px-4 py-2 text-white hover:opacity-80 focus:opacity-80">
+        <Link to="/" className="bg-primary rounded px-4 py-2 text-white hover:opacity-80 focus:opacity-80">
           Create
-        </button>
+        </Link>
       </div>
     </nav>
   );
