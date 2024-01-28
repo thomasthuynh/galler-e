@@ -1,11 +1,17 @@
+import { useState } from "react";
+
 import { preview } from "../assets";
+import { Loader } from "../components";
 
 const Create = () => {
+  const [generatingImg, setGeneratingImg] = useState(false);
+  const [sharingImg, setSharingImg] = useState(false);
+
   return (
-    <section className="bg-secondary min-h-screen w-full py-16">
+    <section className="min-h-screen w-full bg-secondary py-16">
       <div className="mx-auto flex w-[90%] max-w-7xl">
         <div className="text-white">
-          <h1 className="text-primary text-4xl font-bold">Create</h1>
+          <h1 className="text-4xl font-bold text-primary">Create</h1>
           <p className="py-4">
             Create imaginative and visually stunning images and share them with
             the community.
@@ -34,12 +40,18 @@ const Create = () => {
               />
             </div>
 
-            <div className="my-6 h-64 w-64 rounded bg-gray-300">
+            <div className="relative my-6 h-64 w-64 rounded bg-white">
               <img src={preview} alt="Preview" className="opacity-50" />
+
+              {generatingImg && (
+                <div className="absolute inset-0 flex items-center justify-center bg-[rgb(0,0,0,0.5)]">
+                  <Loader />
+                </div>
+              )}
             </div>
 
-            <button className="bg-primary rounded px-6 py-2 text-white hover:opacity-80 focus:opacity-80">
-              Generate
+            <button className="rounded bg-primary px-6 py-2 text-white hover:opacity-80 focus:opacity-80">
+              {generatingImg ? "Generating..." : "Generate"}
             </button>
           </form>
 
@@ -49,8 +61,8 @@ const Create = () => {
               others in the community.
             </p>
 
-            <button className="bg-primary rounded px-6 py-2 text-white hover:opacity-80 focus:opacity-80">
-              Share with the community
+            <button className="rounded bg-primary px-6 py-2 text-white hover:opacity-80 focus:opacity-80">
+              {sharingImg ? "Sharing..." : "Share with the community"}
             </button>
           </div>
         </div>

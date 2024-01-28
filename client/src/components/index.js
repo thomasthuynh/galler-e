@@ -1,3 +1,4 @@
 import Nav from "./Nav";
+import Loader from "./Loader";
 
-export { Nav };
+export { Nav, Loader };
